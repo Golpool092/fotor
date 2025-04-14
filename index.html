@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Топ-10 лучших фоторедакторов: 5 мобильных приложений и 5 компьютерных программ. Рейтинг, сравнение функций, плюсы и минусы каждого редактора.">
+    <meta name="keywords" content="топ фоторедакторов, лучшие приложения для редактирования фото, мобильные фоторедакторы, программы для обработки фото, сравнение фоторедакторов">
+    <meta name="author" content="MillsCome">
+    <meta property="og:title" content="Топ-10 фоторедакторов | MillsCome">
+    <meta property="og:description" content="Рейтинг лучших мобильных и компьютерных приложений для профессиональной и любительской обработки фотографий.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://golpool092.github.io/photo-editors/">
+    <meta name="robots" content="index, follow">
+    <title>Топ-10 фоторедакторов для смартфонов и компьютеров | MillsCome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --dark: #212529;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .search-results {
+            position: absolute;
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            margin-top: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+        }
+        
+        .search-result-item {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .search-result-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .search-result-item h4 {
+            margin: 0;
+            color: var(--primary);
+        }
+        
+        .search-result-item p {
+            margin: 0.3rem 0 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .no-results {
+            padding: 1rem;
+            color: #666;
+            text-align: center;
+        }
+        
+        .highlight {
+            background-color: yellow;
+            color: black;
+        }
+        
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .category-card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .subcategory {
+            margin-top: 1.5rem;
+        }
+        
+        .subcategory h3 {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .subcategory h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            background: #e9ecef;
+            color: #6c757d;
+            border: 2px solid #dee2e6;
+        }
+
+        .btn-disabled:hover {
+            transform: none;
+            box-shadow: none;
+            background: #e9ecef;
+            color: #6c757d;
+        }
+        
+        .ad-block {
+            background: linear-gradient(135deg, #f5f7fa, #e2e8f0);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            border: 2px dashed var(--primary);
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .category-card {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        .app-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .app-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .app-rating {
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-right: 0.5rem;
+        }
+        
+        .app-platform {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+        
+        .app-features {
+            margin: 1rem 0;
+        }
+        
+        .app-features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .app-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .app-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .theme-switcher {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .theme-toggle {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Dark mode styles */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .theme-toggle {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.05);
+        }
+        
+        .dark-mode {
+            --dark: #f8f9fa;
+            --light: #212529;
+            --primary: #3a86ff;
+            --secondary: #2667cc;
+            background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+            color: #f0f0f0;
+        }
+        
+        .dark-mode .category-card,
+        .dark-mode .search-results,
+        .dark-mode .ad-block,
+        .dark-mode .app-card {
+            background: #2d2d2d;
+            color: #f0f0f0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .dark-mode .search-input {
+            background: #3d3d3d;
+            color: white;
+        }
+        
+        .dark-mode .app-features li::before {
+            color: var(--primary);
+        }
+        
+        .dark-mode .ad-block {
+            background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-switcher">
+        <button class="theme-toggle" id="themeToggle">
+            <span>🌙</span> Тёмная тема
+        </button>
+    </div>
+    
+    <header>
+        <div class="container">
+            <a href="https://golpool092.github.io/main/" class="logo">MillsCome</a>
+            <p class="tagline">Топ-10 лучших фоторедакторов: 5 мобильных и 5 компьютерных. Рейтинг, сравнение функций и полезные советы.</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">Топ-10 фоторедакторов для смартфонов и компьютеров</h1>
+        
+        <div class="ad-block">
+            <h3 style="margin-top: 0;">Хотите предложить свой сервис для обзора?</h3>
+            <p>Напишите нам в Telegram и мы рассмотрим ваше предложение!</p>
+            <a href="https://t.me/MillsCome" class="btn" target="_blank">Написать в Telegram</a>
+        </div>
+        
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+            В этом обзоре мы собрали лучшие фоторедакторы для разных задач - от простой ретуши до профессиональной обработки. 
+            Первые 5 приложений работают на смартфонах, остальные 5 - мощные решения для компьютеров.
+        </p>
+    </div>
+    
+    <div class="container">
+        <div class="categories">
+            <div class="category-card">
+                <h2>Мобильные фоторедакторы</h2>
+                <p>Лучшие приложения для обработки фото на Android и iOS</p>
+                
+                <div class="app-card">
+                    <div class="app-badge">#1</div>
+                    <h3>Adobe Lightroom</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★★</div>
+                        <span>4.9/5</span>
+                    </div>
+                    <span class="app-platform">Мобильное</span>
+                    <p>Профессиональный редактор с поддержкой RAW и облачной синхронизацией</p>
+                    <ul class="app-features">
+                        <li>Мощные инструменты цветокоррекции</li>
+                        <li>Поддержка RAW-файлов</li>
+                        <li>Синхронизация с компьютерной версией</li>
+                        <li>Искусственный интеллект для автоматической обработки</li>
+                        <li>Пресеты и профили камер</li>
+                    </ul>
+                    <a href="https://www.adobe.com/ru/products/photoshop-lightroom.html" class="btn" target="_blank">Скачать</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-badge">#2</div>
+                    <h3>Snapseed</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★★</div>
+                        <span>4.8/5</span>
+                    </div>
+                    <span class="app-platform">Мобильное</span>
+                    <p>Бесплатный редактор от Google с профессиональными инструментами</p>
+                    <ul class="app-features">
+                        <li>29 инструментов и фильтров</li>
+                        <li>Точная настройка отдельных областей</li>
+                        <li>RAW-разработка</li>
+                        <li>Сохранение личных пресетов</li>
+                        <li>Работа с историей изменений</li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.niksoftware.snapseed" class="btn" target="_blank">Скачать</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-badge">#3</div>
+                    <h3>VSCO</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span>4.6/5</span>
+                    </div>
+                    <span class="app-platform">Мобильное</span>
+                    <p>Популярный редактор с уникальными фильтрами и сообществом</p>
+                    <ul class="app-features">
+                        <li>200+ премиальных фильтров</li>
+                        <li>Инструменты для тонкой настройки</li>
+                        <li>Встроенное сообщество фотографов</li>
+                        <li>Редактор видео и GIF</li>
+                        <li>Регулярные обновления и новые фильтры</li>
+                    </ul>
+                    <a href="https://vsco.co/" class="btn" target="_blank">Скачать</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-badge">#4</div>
+                    <h3>PicsArt</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span>4.5/5</span>
+                    </div>
+                    <span class="app-platform">Мобильное</span>
+                    <p>Многофункциональный редактор с возможностями коллажей и рисования</p>
+                    <ul class="app-features">
+                        <li>Тысячи бесплатных стикеров и шаблонов</li>
+                        <li>Инструменты для создания коллажей</li>
+                        <li>Эффекты и фильтры в реальном времени</li>
+                        <li>Инструменты для рисования</li>
+                        <li>Поддержка слоев</li>
+                    </ul>
+                    <a href="https://picsart.com/" class="btn" target="_blank">Скачать</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-badge">#5</div>
+                    <h3>FaceApp</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span>4.4/5</span>
+                    </div>
+                    <span class="app-platform">Мобильное</span>
+                    <p>Мощный редактор для портретов с искусственным интеллектом</p>
+                    <ul class="app-features">
+                        <li>AI-фильтры для лиц</li>
+                        <li>Изменение возраста, прически, макияжа</li>
+                        <li>Функции улучшения портретов</li>
+                        <li>Стилизация под знаменитостей</li>
+                        <li>Фоновая размывка и замена</li>
+                    </ul>
+                    <a href="https://www.faceapp.com/" class="btn" target="_blank">Скачать</a>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <h2>Компьютерные фоторедакторы</h2>
+                <p>Профессиональные решения для обработки фото на ПК и Mac</p>
+                
+                <div class="app-card">
+                    <div class="app-badge">#1</div>
+                    <h3>Adobe Photoshop</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★★</div>
+                        <span>4.9/5</span>
+                    </div>
+                    <span class="app-platform">Компьютер</span>
+                    <p>Индустриальный стандарт для профессиональной обработки фото</p>
+                    <ul class="app-features">
+                        <li>Безграничные возможности редактирования</li>
+                        <li>Искусственный интеллект (Neural Filters)</li>
+                        <li>Работа со слоями и масками</li>
+                        <li>Поддержка RAW и 3D</li>
+                        <li>Интеграция с другими продуктами Adobe</li>
+                    </ul>
+                    <a href="https://www.adobe.com/ru/products/photoshop.html" class="btn" target="_blank">Скачать</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-badge">#2</div>
+                    <h3>Affinity Photo</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★★</div>
+                        <span>4.8/5</span>
+                    </div>
+                    <span class="app-platform">Компьютер</span>
+                    <p>Мощная альтернатива Photoshop с единоразовой оплатой</p>
+                    <ul class="app-features">
+                        <li>Профессиональные инструменты ретуши</li>
+                        <li>Поддержка RAW и PSD</li>
+                        <li>Нелинейное редактирование</li>
+                        <li>Работа с HDR и панорамами</li>
+                        <li>Высокая производительность</li>
+                    </ul>
+                    <a href="https://affinity.serif.com/ru/photo/" class="btn" target="_blank">Скачать</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-badge">#3</div>
+                    <h3>Capture One</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★★</div>
+                        <span>4.8/5</span>
+                    </div>
+                    <span class="app-platform">Компьютер</span>
+                    <p>Профессиональный RAW-конвертер и редактор для фотографов</p>
+                    <ul class="app-features">
+                        <li>Лучшая в отрасли обработка RAW</li>
+                        <li>Точная цветокоррекция</li>
+                        <li>Поддержка камерных профилей</li>
+                        <li>Мощные инструменты ретуши</li>
+                        <li>Сессионная работа и каталогизация</li>
+                    </ul>
+                    <a href="https://www.captureone.com/ru" class="btn" target="_blank">Скачать</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-badge">#4</div>
+                    <h3>GIMP</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span>4.5/5</span>
+                    </div>
+                    <span class="app-platform">Компьютер</span>
+                    <p>Бесплатный редактор с открытым исходным кодом</p>
+                    <ul class="app-features">
+                        <li>Бесплатный аналог Photoshop</li>
+                        <li>Поддержка плагинов и скриптов</li>
+                        <li>Работа со слоями и масками</li>
+                        <li>Поддержка множества форматов</li>
+                        <li>Активное сообщество</li>
+                    </ul>
+                    <a href="https://www.gimp.org/" class="btn" target="_blank">Скачать</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-badge">#5</div>
+                    <h3>Luminar Neo</h3>
+                    <div class="app-rating">
+                        <div class="stars">★★★★☆</div>
+                        <span>4.4/5</span>
+                    </div>
+                    <span class="app-platform">Компьютер</span>
+                    <p>Инновационный редактор с искусственным интеллектом</p>
+                    <ul class="app-features">
+                        <li>AI-инструменты для автоматической обработки</li>
+                        <li>Умное удаление объектов</li>
+                        <li>Атмосферные эффекты</li>
+                        <li>Поддержка слоев</li>
+                        <li>Быстрая обработка пакетов</li>
+                    </ul>
+                    <a href="https://skylum.com/ru/luminar" class="btn" target="_blank">Скачать</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ad-block">
+            Тут могла быть ваша реклама<br>
+            <small>Разместите рекламу в нашем <a href="https://t.me/MillsCome" style="color: var(--primary);">Telegram-канале</a></small>
+        </div>
+        
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="https://t.me/MillsCome" class="btn" target="_blank" style="background: linear-gradient(135deg, #0088cc, #005580);">Подписаться на Telegram-канал</a>
+            <p style="margin-top: 1rem;">Присоединяйтесь к нашему каналу, чтобы первыми узнавать о новых обзорах и полезных материалах!</p>
+        </div>
+        
+        <div class="ad-block">
+            <h3>Какой фоторедактор выбрать?</h3>
+            <p><strong>Для смартфона:</strong> Если вам нужен профессиональный результат - Lightroom, для быстрой обработки - Snapseed, для творческих эффектов - VSCO.</p>
+            <p><strong>Для компьютера:</strong> Photoshop - для максимальных возможностей, Affinity Photo - как альтернатива с единоразовой оплатой, GIMP - бесплатное решение.</p>
+            <p>Больше советов и сравнений в нашем <a href="https://t.me/MillsCome" style="color: var(--primary); font-weight: bold;">Telegram-канале</a>!</p>
+        </div>
+    </div>
+    
+    <footer style="text-align: center; padding: 2rem; color: var(--dark); font-size: 0.9rem; margin-top: 2rem;">
+        <p>© 2024 MillsCome. Все права защищены.</p>
+        <p><a href="https://golpool092.github.io/main/" style="color: var(--primary);">Вернуться на главную</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Анимация элементов
+            const cards = document.querySelectorAll('.category-card, .app-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+
+            // Анимация логотипа
+            const logo = document.querySelector('.logo');
+            setTimeout(() => {
+                logo.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    logo.style.transform = 'scale(1)';
+                }, 300);
+            }, 1000);
+
+            // Обработка кнопок
+            document.querySelectorAll('.btn-disabled').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('Этот раздел в разработке. Следите за обновлениями в нашем Telegram-канале!');
+                });
+            });
+        });
+        
+        // Тёмная тема
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Проверяем сохранённую тему
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<span>☀️</span> Светлая тема';
+        }
+
+        // Обработчик переключения
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                themeToggle.innerHTML = '<span>☀️</span> Светлая тема';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                themeToggle.innerHTML = '<span>🌙</span> Тёмная тема';
+            }
+        });
+    </script>
+</body>
+</html>
